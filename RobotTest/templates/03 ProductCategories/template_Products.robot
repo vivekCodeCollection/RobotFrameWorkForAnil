@@ -12,7 +12,6 @@ Products Template
      Sleep  2
      Mouse Over      xpath=(//span[contains(text(),'${l_data['ProductCategory']['input']}')])[1]
      click element   xpath=//span[normalize-space()='${l_data['ProductName']['input']}']
-     #scroll element into view   ${Page.Product.ProDetail.Link}
      Sleep  3
      Execute JavaScript    window.scrollTo(0, 500)
      Sleep  2
@@ -20,6 +19,21 @@ Products Template
      click button   ${Page.Product.AddToCart.Btn}
      @{args}    Create List    ${l_data['expectedTextInPage']}
      VERIFY    Page Should Contain    ${args}
+     ${Price}   GetTotalPrice
+     Log To Console   Price is ${Price}
+
+
+
+
+
+GetTotalPrice
+  ${orderPrice}   get text   ${SubTotalPrice}
+  [Return]    ${orderPrice}
+
+
+VerifyShippingAddres
+   [Arguments]    ${Address}
+   element should contain   ${ShippingAddress}      ${Address}
 
 
 

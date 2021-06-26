@@ -15,5 +15,11 @@
 		"validationMessage": "",
 		"fieldError": ""
 	},
+	"ShippingAddress": {
+		"input": "anil kumar1",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
 	"expectedTextInPage": "You added "
 }

@@ -21,8 +21,8 @@ ${Page.Registration.CreateAccount.Btn}    xpath=//button[@class='action submit p
 #AddToCart
 ${Page.Product.ProDetail.Link}   xpath=(//ol[@class='products list items product-items']/li)[1]
 ${Page.Product.AddToCart.Btn}   xpath=(//button[@title='Add to Cart'])[1]
-${SubTotalPrice}           xpath=//div[@class='subtotal']//span[@class='price']
-${CheckOutBtn}             xapth=//li//button[@class='action primary checkout']
+${SubTotalPrice}           xpath=//td[@data-th='Grand Total']//span
+${CheckOutBtn}             xapth=//button[@title='Checkout']/span
 ${ShippingAddress}   xpath=(//address[@class='addressLabel-root-jdd'])[1]
 ${NextDeliveryMetod}   xpath=(//button/span[text()='Next: Delivery Method'])[1]
 ${ThresholdDelivery}   xpath=//span[text()='Threshold Delivery']
