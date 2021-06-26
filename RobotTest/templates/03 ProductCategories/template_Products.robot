@@ -12,7 +12,14 @@ Products Template
      Sleep  2
      Mouse Over      xpath=(//span[contains(text(),'${l_data['ProductCategory']['input']}')])[1]
      click element   xpath=//span[normalize-space()='${l_data['ProductName']['input']}']
-
+     #scroll element into view   ${Page.Product.ProDetail.Link}
+     Sleep  3
+     Execute JavaScript    window.scrollTo(0, 500)
+     Sleep  2
+     Mouse Over   ${Page.Product.ProDetail.Link}
+     click button   ${Page.Product.AddToCart.Btn}
+     @{args}    Create List    ${l_data['expectedTextInPage']}
+     VERIFY    Page Should Contain    ${args}
 
 
 
