@@ -1,0 +1,31 @@
+{
+	"info": {
+		"testCaseName": "01 - Possitive Scenario - Successfull Registration",
+		"templateName": "Registration Template"
+	},
+	"FirstName": {
+		"input": "Test",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"LastName": {
+		"input": "RobotFrameWork",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"Email": {
+		"input": "TestRobo",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"PassWordAndConfirmPassWord": {
+		"input": "Test@123#!",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"expectedTextInPage": "Thank you for registering with Bernie & Phyl's Furniture."
+}

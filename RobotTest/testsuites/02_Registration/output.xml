@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.7.8 on win32)" generated="20210626 18:03:54.453" rpa="false" schemaversion="2">
+<suite id="s1" name="RegistrationSuite" source="C:\Users\BABA\PycharmProjects\cloudbank-test-automation\testsuites\02_Registration\RegistrationSuite.robot">
+<kw name="GoTo Cloud Bank Page" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210626 18:03:54.932" level="INFO">Opening browser 'chrome' to base url 'https://m2.bernieandphyls.com/'.</msg>
+<status status="PASS" starttime="20210626 18:03:54.932" endtime="20210626 18:04:28.986"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210626 18:04:28.987" endtime="20210626 18:04:29.129"/>
+</kw>
+<status status="PASS" starttime="20210626 18:03:54.931" endtime="20210626 18:04:29.129"/>
+</kw>
+<test id="s1-t1" name="01 - Possitive Scenario - Successfull Registration">
+<kw name="Registration Template" library="template_Registration">
+<arg>C:\\Users\\BABA\\PycharmProjects\\cloudbank-test-automation\\testsuites\\02_Registration\\data\\R1.json</arg>
+<kw name="Load Json Data Into Dictionary" library="keywords">
+<var>${l_data}</var>
+<arg>${i_data}</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${l_file}</var>
+<arg>${i_data}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20210626 18:04:29.132" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\BABA\PycharmProjects\cloudbank-test-automation\testsuites\02_Registration\data\R1.json"&gt;C:\Users\BABA\PycharmProjects\cloudbank-test-automation\testsuites\02_Registration\data\R1.json&lt;/a&gt;'.</msg>
+<msg timestamp="20210626 18:04:29.133" level="INFO">${l_file} = {
+	"info": {
+		"testCaseName": "01 - Possitive Scenario - Successfull Registration",
+		"templateName": "Registration Template"
+	},
+	"FirstName": {
+		"input": "Test",
+		"verify": "",
+		"validationMessa...</msg>
+<status status="PASS" starttime="20210626 18:04:29.132" endtime="20210626 18:04:29.133"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${l_data}</var>
+<arg>json.loads('''${l_file}''')</arg>
+<arg>modules=json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210626 18:04:29.134" level="INFO">${l_data} = {'info': {'testCaseName': '01 - Possitive Scenario - Successfull Registration', 'templateName': 'Registration Template'}, 'FirstName': {'input': 'Test', 'verify': '', 'validationMessage': '', 'fieldEr...</msg>
+<status status="PASS" starttime="20210626 18:04:29.133" endtime="20210626 18:04:29.134"/>
+</kw>
+<msg timestamp="20210626 18:04:29.134" level="INFO">${l_data} = {'info': {'testCaseName': '01 - Possitive Scenario - Successfull Registration', 'templateName': 'Registration Template'}, 'FirstName': {'input': 'Test', 'verify': '', 'validationMessage': '', 'fieldEr...</msg>
+<status status="PASS" starttime="20210626 18:04:29.131" endtime="20210626 18:04:29.134"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210626 18:04:31.135" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210626 18:04:29.135" endtime="20210626 18:04:31.135"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Page.Account.Login.Btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210626 18:04:31.136" level="INFO">Clicking button 'xpath=//button[@class='action switch' and @data-action='guest-menu-toggle']'.</msg>
+<status status="PASS" starttime="20210626 18:04:31.135" endtime="20210626 18:04:31.208"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210626 18:04:32.209" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210626 18:04:31.208" endtime="20210626 18:04:32.209"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Page.Registration.CreateAnAcount.Link}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210626 18:04:32.211" level="INFO">Clicking link 'xpath=//a[@class='action' and @title='Create an Account']'.</msg>
+<status status="PASS" starttime="20210626 18:04:32.210" endtime="20210626 18:04:38.560"/>
+</kw>
+<kw name="RegistrationPersonalInformation" library="template_Registration">
+<arg>${l_data['FirstName']['input']}</arg>
+<arg>${l_data['LastName']['input']}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Page.Registration.FirstName.Input}</arg>
+<arg>${i_firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 18:04:38.568" level="INFO">Typing text 'Test' into text field 'id=firstname'.</msg>
+<status status="PASS" starttime="20210626 18:04:38.567" endtime="20210626 18:04:38.676"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Page.Registration.LastName.Input}</arg>
+<arg>${i_lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 18:04:38.677" level="INFO">Typing text 'RobotFrameWork' into text field 'id=lastname'.</msg>
+<status status="PASS" starttime="20210626 18:04:38.677" endtime="20210626 18:04:38.788"/>
+</kw>
+<status status="PASS" starttime="20210626 18:04:38.561" endtime="20210626 18:04:38.789"/>
+</kw>
+<kw name="RandomStringGenration" library="template_Registration">
+<var>${val}</var>
+<kw name="Generate Random String" library="String">
+<var>${Random_Number}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20210626 18:04:38.790" level="INFO">${Random_Number} = 1291</msg>
+<status status="PASS" starttime="20210626 18:04:38.790" endtime="20210626 18:04:38.790"/>
+</kw>
+<msg timestamp="20210626 18:04:38.791" level="INFO">${val} = 1291</msg>
+<status status="PASS" starttime="20210626 18:04:38.789" endtime="20210626 18:04:38.791"/>
+</kw>
+<kw name="RegistrationSignInInformation" library="template_Registration">
+<arg>${l_data['Email']['input']}${val}${Emailxtension}</arg>
+<arg>${l_data['PassWordAndConfirmPassWord']['input']}</arg>
+<arg>${l_data['PassWordAndConfirmPassWord']['input']}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Page.Registration.Email.Input}</arg>
+<arg>${i_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 18:04:38.802" level="INFO">Typing text 'TestRobo1291@gmail.com' into text field 'id=email_address'.</msg>
+<status status="PASS" starttime="20210626 18:04:38.801" endtime="20210626 18:04:38.953"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Page.Registration.Password.Input}</arg>
+<arg>${i_passWord}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 18:04:38.953" level="INFO">Typing text 'Test@123#!' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20210626 18:04:38.953" endtime="20210626 18:04:39.195"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Page.Registration.ConfirmPassword.Input}</arg>
+<arg>${i_ConfirmpassWord}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210626 18:04:39.197" level="INFO">Typing text 'Test@123#!' into text field 'id=password-confirmation'.</msg>
+<status status="PASS" starttime="20210626 18:04:39.196" endtime="20210626 18:04:39.331"/>
+</kw>
+<status status="PASS" starttime="20210626 18:04:38.791" endtime="20210626 18:04:39.332"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Page.Registration.RemeberMe.Chkbox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210626 18:04:39.332" endtime="20210626 18:04:39.363"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210626 18:04:41.365" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210626 18:04:39.364" endtime="20210626 18:04:41.365"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, 700)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210626 18:04:41.369" level="INFO">Executing JavaScript:
+window.scrollTo(0, 700)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210626 18:04:41.366" endtime="20210626 18:04:41.386"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210626 18:04:43.387" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210626 18:04:41.387" endtime="20210626 18:04:43.387"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${Page.Registration.CreateAccount.Btn}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20210626 18:04:43.390" level="INFO">Double clicking element 'xpath=//button[@class='action submit primary' and @type='submit']'.</msg>
+<status status="PASS" starttime="20210626 18:04:43.388" endtime="20210626 18:04:48.360"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{args}</var>
+<arg>${l_data['expectedTextInPage']}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20210626 18:04:48.365" level="INFO">@{args} = [ Thank you for registering with Bernie &amp; Phyl's Furniture. ]</msg>
+<status status="PASS" starttime="20210626 18:04:48.361" endtime="20210626 18:04:48.365"/>
+</kw>
+<kw name="VERIFY" library="keywords">
+<arg>Page Should Contain</arg>
+<arg>${args}</arg>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>${l_test_status}</var>
+<var>${l_test_message}</var>
+<arg>${i_assertion_keyword}</arg>
+<arg>@{i_args}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>@{i_args}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210626 18:04:48.392" level="INFO">Current page contains text 'Thank you for registering with Bernie &amp; Phyl's Furniture.'.</msg>
+<status status="PASS" starttime="20210626 18:04:48.371" endtime="20210626 18:04:48.392"/>
+</kw>
+<msg timestamp="20210626 18:04:48.392" level="INFO">${l_test_status} = PASS</msg>
+<msg timestamp="20210626 18:04:48.392" level="INFO">${l_test_message} = None</msg>
+<status status="PASS" starttime="20210626 18:04:48.370" endtime="20210626 18:04:48.393"/>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<var>${i_pass_message}</var>
+<arg>'${i_pass_message}'=='${EMPTY}'</arg>
+<arg>${EMPTY}</arg>
+<arg>&gt; ${i_pass_message}\n</arg>
+<doc>Sets variable based on the given condition.</doc>
+<msg timestamp="20210626 18:04:48.398" level="INFO">${i_pass_message} = </msg>
+<status status="PASS" starttime="20210626 18:04:48.393" endtime="20210626 18:04:48.398"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${l_test_status}'=='PASS'</arg>
+<arg>Run Keywords</arg>
+<arg>Set Test Message</arg>
+<arg>${i_pass_message}</arg>
+<arg>append=yes</arg>
+<arg>AND</arg>
+<arg>Return From Keyword</arg>
+<arg>${l_test_status}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Run Keywords" library="BuiltIn">
+<arg>Set Test Message</arg>
+<arg>${i_pass_message}</arg>
+<arg>append=yes</arg>
+<arg>AND</arg>
+<arg>Return From Keyword</arg>
+<arg>${l_test_status}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Set Test Message" library="BuiltIn">
+<arg>${i_pass_message}</arg>
+<arg>append=yes</arg>
+<doc>Sets message for the current test case.</doc>
+<msg timestamp="20210626 18:04:48.400" level="INFO">Set test message to:
+</msg>
+<status status="PASS" starttime="20210626 18:04:48.399" endtime="20210626 18:04:48.400"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${l_test_status}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20210626 18:04:48.400" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20210626 18:04:48.400" endtime="20210626 18:04:48.400"/>
+</kw>
+<status status="PASS" starttime="20210626 18:04:48.399" endtime="20210626 18:04:48.401"/>
+</kw>
+<status status="PASS" starttime="20210626 18:04:48.398" endtime="20210626 18:04:48.401"/>
+</kw>
+<status status="PASS" starttime="20210626 18:04:48.365" endtime="20210626 18:04:48.401"/>
+</kw>
+<status status="PASS" starttime="20210626 18:04:29.131" endtime="20210626 18:04:48.401"/>
+</kw>
+<status status="PASS" starttime="20210626 18:04:29.129" endtime="20210626 18:04:48.402"/>
+</test>
+<status status="PASS" starttime="20210626 18:03:54.457" endtime="20210626 18:04:48.403"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="RegistrationSuite">RegistrationSuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

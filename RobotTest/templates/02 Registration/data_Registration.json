@@ -1,0 +1,30 @@
+{
+	"info": {
+		"testCaseName": "",
+		"templateName": ""
+	},
+	"FirstName": {
+		"input": "",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"LastName": {
+		"input": "",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"Email": {
+		"input": "",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"PassWordAndConfirmPassWord": {
+		"input": "",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	}
+}

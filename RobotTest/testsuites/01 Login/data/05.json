@@ -1,0 +1,15 @@
+{
+	"info": {
+		"testCaseName": "05 - Negative Scenario - Login - Valid User And Wrong Password",
+		"templateName": "Login Template"
+	},
+	"username": {
+		"input": "tester@gmail.com",
+		"validationMessage": ""
+	},
+	"password": {
+		"input": "password@xxxx",
+		"validationMessage": ""
+	},
+	"expectedTextInPage": "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later."
+}

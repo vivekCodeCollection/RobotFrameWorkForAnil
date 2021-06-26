@@ -1,0 +1,15 @@
+{
+	"info": {
+		"testCaseName": "06 - Positive Scenario - Login - Valid User And Correct Password",
+		"templateName": "Login Template"
+	},
+	"username": {
+		"input": "anil.kumar+1@websolutionsnyc.com",
+		"validationMessage": ""
+	},
+	"password": {
+		"input": "Test@123",
+		"validationMessage": ""
+	},
+	"expectedTextInPage": "My Account  - Bernie & Phyl’s Furniture"
+}

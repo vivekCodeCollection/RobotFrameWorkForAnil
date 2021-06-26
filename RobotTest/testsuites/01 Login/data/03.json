@@ -1,0 +1,16 @@
+{
+	"info": {
+		"testCaseName": "03 - Negative Scenario - Login - Password Field Empty",
+		"templateName": "Login Template"
+	},
+	"username": {
+		"input": "anil.kumar+1@websolutionsnyc.com",
+		"validationMessage": ""
+	},
+	"password": {
+		"input": "",
+		"PwdErrorElement": "//div[@id='pass-error']",
+		"validationMessage": "This is a required field."
+	},
+	"expectedTextInPage": ""
+}
