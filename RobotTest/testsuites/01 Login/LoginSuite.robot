@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../../templates/01 Login/template_Login.robot
-Suite Setup    GoTo Cloud Bank Page          
+Suite Setup    GoTo bernieandphyls Page
 Suite Teardown    Logout
 Test Template    Login Template    
 

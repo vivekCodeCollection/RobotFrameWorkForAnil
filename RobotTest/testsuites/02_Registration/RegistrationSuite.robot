@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../../templates/02 Registration/template_Registration.robot
-Suite Setup    GoTo Cloud Bank Page
-#Suite Teardown    Logout
+Suite Setup    GoTo bernieandphyls Page
+Suite Teardown    Logout
 Test Template    Registration Template
 
 

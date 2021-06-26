@@ -1,0 +1,18 @@
+{
+	"info": {
+		"testCaseName": "",
+		"templateName": ""
+	},
+	"ProductCategory": {
+		"input": "",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"ProductName": {
+		"input": "",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	}
+}
