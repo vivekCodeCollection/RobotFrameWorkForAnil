@@ -1,0 +1,18 @@
+{
+	"info": {
+		"testCaseName": "01 - Possitive Scenario - Search Product From Menu",
+		"templateName": "Products Template"
+	},
+	"ProductCategory": {
+		"input": "Living Room",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	},
+	"ProductName": {
+		"input": "Sofas",
+		"verify": "",
+		"validationMessage": "",
+		"fieldError": ""
+	}
+}
